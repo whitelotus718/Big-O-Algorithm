@@ -12,12 +12,15 @@ function firstAnagram(str1, str2) {
   }else return false
 }
 
-console.log(firstAnagram("gizmo", "sally"));    // => false
-console.log(firstAnagram("elvis", "lives"));  // true
+// n complexity
 
-function secondAnagram(str1, str2) {
-  // Code goes here ....
-}
+// console.log(firstAnagram("gizmo", "sally"));    // => false
+// console.log(firstAnagram("elvis", "lives"));  // true
+
+const secondAnagram = (str1, str2) => str1.split("").sort().join("") === str2.split("").sort().join("")
+
+console.log(secondAnagram("gizmo", "sally"));    // => false
+console.log(secondAnagram("elvis", "lives"));  // true
 
 
 function thirdAnagram(str1, str2) {
