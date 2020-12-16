@@ -1,4 +1,4 @@
-function firstAnagram(str1, str2) {
+function firstAnagram(str1, str2) { /// O(n)
   let letters = str1.split('');
   for (let i = 0; i < str2.length; i++){
      const letter = str2[i];
