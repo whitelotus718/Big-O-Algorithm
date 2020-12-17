@@ -24,6 +24,7 @@ const secondAnagram = (str1, str2) => str1.split("").sort().join("") === str2.sp
 
 
 function thirdAnagram(str1, str2) {
+  // Complexity (n + m) - time | space - 2 ==> 1
 let obj = {}
 let obj2 = {}
 
@@ -40,12 +41,24 @@ for (let i = 0; i < str1.length || i < str2.length; i++){
     obj2[str2Key] = 1
   }
 }
-const val1Array = Object.entries(obj);
-const val2Array = Object.entries(obj2);
+// const val1Array = Object.entries(obj);
+// const val2Array = Object.entries(obj2);
 
-if (val1Array.sort().join('') === val2Array.sort().join('')){
-  return true
-}else return false
+for (let key1 in obj) {
+  if (obj[key1] !== obj2[key1]){
+    return false;
+  }
+}
+for (let key2 in obj) {
+  if (obj2[key2] !== obj1[key2]){
+    return false;
+  }
+}
+return true;
+
+// if (val1Array.sort().join('') === val2Array.sort().join('')){
+//   return true
+// }else return false
 // console.log(val1Array)
 // console.log(val2Array)
 }
